@@ -1,24 +1,35 @@
-import logo from './logo.svg';
+
+import Navegacion from './Componentes/Navegacion';
 import './App.css';
+import { Routes, Route } from 'react-router-dom';
+import Home from './Home/Home';
+import Contacto from './Contacto/Contacto';
+import Footer from './Componentes/Footer';
+import Alta from './Alta/Alta';
+import Nosotros from './Nosotros/Nosotros';
+import Creatina from './Creatina/Creatina';
+import Carrito from './Carrito/Carrito';
+import Proteina from './Proteina/Proteina'
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+    <Navegacion />  
+
+    <Routes>
+      <Route path='/' element={<Home />} />
+      <Route path='/contacto' element={<Contacto />} />
+      <Route path='/alta' element={<Alta />} />
+      <Route path='/nosotros' element={<Nosotros />} />
+      <Route path='/creatina' element={<Creatina />} />
+      <Route path='/proteina' element={<Proteina />} />
+      <Route path='/carrito' element={<Carrito />} />
+
+    </Routes>
+
+    <Footer />
+    </>
   );
 }
 
